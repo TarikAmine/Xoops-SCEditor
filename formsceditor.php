@@ -17,8 +17,8 @@
  * @package         class
  * @subpackage      editor
  * @since           2.5.6
- * @author          Michael Beck <mambax7@gmail.com>
- * @version         $Id: formtinymce.php 8066 2011-11-06 05:09:33Z beckmi $
+ * @author          AMINE Tarik <tarik.d.amine@gmail.com>
+ * @version         $Id: formsceditor.php 8066 2011-11-06 05:09:33Z beckmi $
  */
 
 xoops_load('XoopsEditor');
@@ -99,7 +99,7 @@ class XoopsFormSceditor extends XoopsEditor
             $eltmsg = empty($eltcaption) ? sprintf( _FORM_ENTER, $eltname ) : sprintf( _FORM_ENTER, $eltcaption );
             $eltmsg = str_replace('"', '\"', stripslashes( $eltmsg ) );
             $ret = "\n";
-            $ret.= "if ( tinyMCE.get('{$eltname}').getContent() == \"\" || tinyMCE.get('{$eltname}').getContent() == null)";
+            $ret.= "if ($('#{$eltname}').sceditor('instance').val() == \"\" || tinyMCE.get('{$eltname}').getContent() == null)";
             $ret.= "{ window.alert(\"{$eltmsg}\"); myform.{$eltname}.focus(); return false; }";
             return $ret;
             }
