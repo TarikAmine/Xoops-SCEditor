@@ -142,7 +142,7 @@ class XoopsFormSceditor extends XoopsEditor
           $smilies_more .= '"'.$smily['code'].'": "'.XOOPS_URL.'/uploads/'.$smily['smile_url'].'",';
       }
       $ret.= "<script type='text/javascript'>\n";
-      $ret.= "jQuery(document).ready(function(){\n";
+      $ret.= "jQuery(document).ready(function($){\n";
 			$ret.= "  $('#".$this->getName()."').sceditor({\n";
       $ret.= "    rtl : ".$rtl.",\n";
       $ret.= "    fonts : \""._XOOPS_EDITOR_SCEDITOR_FONTS."\",\n";
